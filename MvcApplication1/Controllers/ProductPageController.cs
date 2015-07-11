@@ -21,6 +21,11 @@ namespace MvcApplication1.Controllers
             //list.Add(new Product("Apple", "Green", 10));
             return View(context.Products);
         }
+        [HttpPost]
+        public ActionResult CreateNew()
+        {
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             context.Dispose();

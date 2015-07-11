@@ -4,21 +4,55 @@
 @model IEnumerable<MvcApplication1.Models.Product>
 <!DOCTYPE html>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product page</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/themes/Suite.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        @using (Html.BeginForm("Index","ProductPage"))
-        <h1>You do it matherfucker</h1>
-        @foreach (var prod in Model)
-        {
-            <h2>@prod.Name</h2>
-            <div>@prod.Type</div>
-            <div>@prod.Count</div>
-        }      
+    <div class="container">
+        
+       
+            <table class="table">
+                <thead>
+                    <h3>Products:</h3>
+                </thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Product type</th>
+                    <th>count</th>
+                </tr>
+                    @foreach (var prod in Model)
+                    {
+                        <tr>
+                            <td>@prod.Id</td>
+                            <td>@prod.Name</td>
+                            <td>@prod.Type</td>
+                            <td>@prod.Count</td>
+                            <td><a href="/ProductPage/Index/@prod.Id"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></td>
+                        </tr>
+                    }        
+                
+                        
+                    
+                    
+        
+
+            </table>
+            <div>
+                <h2>Name:</h2>
+            </div>
     </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
