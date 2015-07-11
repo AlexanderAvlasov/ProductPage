@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-@model IEnumerable<MvcApplication1.Models.Product>
+@model MvcApplication1.Models.ProductModel
 <!DOCTYPE html>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
                     <th>Product type</th>
                     <th>count</th>
                 </tr>
-                    @foreach (var prod in Model)
+                    @foreach (var prod in Model.products)
                     {
                         <tr>
                             <td>@prod.Id</td>
@@ -46,9 +46,24 @@
         
 
             </table>
+        <div>
             <div>
-                <h2>Name:</h2>
+                <h2>Create new product:</h2>
             </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <div> <label>Name:</label></div>
+                    <div><label>Type:</label></div>
+                    <div><label>Count:</label></div>
+                </div>
+                <div class="form-group">
+                    <div><input class="text" id="Text1" type="text" /></div>
+                    <div><input class="text" id="Text1" type="text" /></div>
+                    <div><input class="text" id="Text1" type="text" /></div>
+                </div>
+            </div>
+            <input class="btn btn-primary" id="Button1" type="button" value="Create" />
+        </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

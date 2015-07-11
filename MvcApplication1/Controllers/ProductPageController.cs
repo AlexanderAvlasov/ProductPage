@@ -19,7 +19,9 @@ namespace MvcApplication1.Controllers
             //list.Add(new Product("Apple", "Golden", 5));
             //list.Add(new Product("Apple","Green",10));
             //list.Add(new Product("Apple", "Green", 10));
-            return View(context.Products);
+            ProductModel model = new ProductModel();
+            model.products = context.Products.AsEnumerable().ToList();
+            return View(model);
         }
         [HttpPost]
         public ActionResult CreateNew()
