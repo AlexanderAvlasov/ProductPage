@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<MvcApplication1.Models.Product>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index","ProductPage"))
+        <h1>You do it matherfucker</h1>
+        @foreach (var prod in Model)
+        {
+            <h2>@prod.Name</h2>
+            <div>@prod.Type</div>
+            <div>@prod.Count</div>
+        }      
+    </div>
+</body>
+</html>
